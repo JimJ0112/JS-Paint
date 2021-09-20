@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Paint App Prototype </title>
+    <link href="Design.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body> 
+    <div id = "PaintApp">
+
+
+        <div id="ToolsPanel" class="PaintAppObj">
+        <div id="SaveBox" class="ToolsPanelObj"> SaveBox </div> 
+        <div id="Brush-Selected" class="ToolsPanelObj"> Current Brush</div>   
+        <div id="Brush-Menu" class="ToolsPanelObj" > Brush Menu</div>  
+        <div id="Brush-Color" class="ToolsPanelObj"> Colors</div> 
+        <div id="Brush-Size" class="ToolsPanelObj"> Brush Size</div> 
+        <div id="Undo-Redo" class="ToolsPanelObj"> Undo - Redo</div>  
+        <div id="Help" class="ToolsPanelObj"> Help</div> 
+        
+        </div> <!--End of div ToolsPanel-->
+        <canvas id="PaintCanvas"  > </canvas>
+        <div id="BottomPanel"  class="PaintAppObj">
+            <h4> ||  X Location =  <span id="BottomPanel-XLocation"> 0 </span> ||   Y Location =  <span id="BottomPanel-YLocation">0</span> ||   </h4>
+        
+        </div> <!--End of div BottomPanel-->
+        
+        </div> <!--End of div PaintApp-->
+        
+    <script src="App.js"></script>
+</body>    
+</html>

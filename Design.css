@@ -103,3 +103,10 @@ width: 90px;
 #BottomPanel-YLocation{
     color: rgb(41, 4, 255);
 }
+
+@media only screen and (max-width: 500px) {
+    body {
+      background-color: lightblue;
+      overflow: hidden;
+    }
+  }

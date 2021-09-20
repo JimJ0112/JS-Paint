@@ -93,6 +93,10 @@ window.addEventListener("resize",function(){     PaintCanvas.width = window.inne
 
     });
 
+    PaintCanvas.addEventListener("touchstart",StartLoc);
+    PaintCanvas.addEventListener("touchend",FinishLoc);
+    PaintCanvas.addEventListener("touchmove",DrawInTouch);
+
 }
 
 //functions
@@ -160,4 +164,36 @@ if(isPainting){
 
 
 }
+
+function DrawInTouch(e){
+    // /*
+ if(isPainting){
+     ctx_PaintCanvas.strokeStyle = "black";
+     LocationX = e.touches[0].clientX;
+     LocationY = e.touches[0].clientY;
+ 
+ 
+     DisplayLocationX.textContent = LocationX;
+     DisplayLocationY.textContent = LocationY;
+     ctx_PaintCanvas.lineWidth = 1;
+     ctx_PaintCanvas.lineCap = "round";
+ 
+     ctx_PaintCanvas.lineTo(LocationX , LocationY);
+     
+  
+     ctx_PaintCanvas.stroke();
+     
+ 
+ 
+ } else{//console.log("isPainting? " + isPainting);
+ 
+ }
+ 
+ //*/
+ // experiment
+ 
+ 
+ 
+ }
+ 
 

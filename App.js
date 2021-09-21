@@ -28,9 +28,11 @@ function MainFunc(){
     console.log(ctx_PaintCanvas);
     PaintCanvas.width = window.innerWidth;
     PaintCanvas.height = window.innerHeight;
-
+    ctx_PaintCanvas.fillStyle = "white";
+   
     let cWidth = PaintCanvas.width;
     let cHeight = PaintCanvas.height;
+    ctx_PaintCanvas.fillRect(0,0,cWidth,cHeight);
     /*
     // adding a grid to the canvas
     ctx_PaintCanvas.strokeStyle = "#ddd";

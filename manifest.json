@@ -1,0 +1,18 @@
+{
+    "name": "JS Paint",
+    "lang": "en-us",
+    "short_name": "JS Paint",
+    "description": "A sample PWA for testing purposes",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "theme_color": "white",
+    "background_color": "#070529",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "Images/512.png",
+            "sizes": "512x512"
+        }
+    ]
+}

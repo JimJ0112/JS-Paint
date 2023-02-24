@@ -57,12 +57,16 @@ function MainFunc(){
 PaintCanvas.addEventListener("mousedown",StartLoc);
 PaintCanvas.addEventListener("mouseup",FinishLoc);
 PaintCanvas.addEventListener("mousemove",Draw);
-window.addEventListener("resize",function(){     PaintCanvas.width = window.innerWidth;
-    PaintCanvas.height = window.innerHeight;})
+
+window.addEventListener("resize",function(){     
+    PaintCanvas.width = window.innerWidth;
+    PaintCanvas.height = window.innerHeight;
+});
+
 
     window.addEventListener("keydown",function(){
        
-        if(event.code == "KeyA"){
+        if(event.code === "KeyA"){
             console.log(event.code);
             ctx_PaintCanvas.clearRect(0,0,PaintCanvas.width,PaintCanvas.height);
             var img = new Image;
@@ -75,7 +79,7 @@ window.addEventListener("resize",function(){     PaintCanvas.width = window.inne
             }
         }
 
-        if(this.event.code == "KeyS"){
+        if(this.event.code === "KeyS"){
             
             img.src = RedoData.pop();
             img.onload = function(){
@@ -83,12 +87,12 @@ window.addEventListener("resize",function(){     PaintCanvas.width = window.inne
             }
         }
 
-        if(this.event.code == "KeyT"){
+        if(this.event.code === "KeyT"){
             document.getElementById("ToolsPanel").style.display="none";
             document.getElementById("BottomPanel").style.display = "none";
         }
 
-        if(this.event.code=="KeyY"){
+        if(this.event.code ==="KeyY"){
             document.getElementById("ToolsPanel").style.display="grid";
             document.getElementById("BottomPanel").style.display = "grid";
         }
@@ -124,12 +128,11 @@ function FinishLoc(e){
    ctx_PaintCanvas.beginPath();
    EndLocationX = e.clientX;
    EndLocationY = e.clientY;
-  /* StackData[0] = PaintCanvas.toDataURL("image/png"); */
+ 
    CanvasData = PaintCanvas.toDataURL("image/png");
 
    
 UndoData.push(PaintCanvas.toDataURL("image/png"));
-//UndoData[counter] = PaintCanvas.toDataURL("image/png");
 
 console.log(counter);
   

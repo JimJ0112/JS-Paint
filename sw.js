@@ -9,10 +9,10 @@ self.addEventListener("install", function(event) {
   
   
     evt.waitUntil(    
-      caches.open('parkingManagementCache').then(cache => {
+      caches.open('JSPAINTCache').then(cache => {
       console.log("caching assets");
-      cache.addAll(['/','index.html','Images/512.png','Design.css'])
-  
+      //cache.addAll(['/','index.html','Images/512.png','Design.css'])
+        cache.addAll(['/']);
       })
     );
 

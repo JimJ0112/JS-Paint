@@ -3,7 +3,7 @@
     "lang": "en-us",
     "short_name": "JS Paint",
     "description": "A sample PWA for testing purposes",
-    "start_url": "/",
+    "start_url": "/index.html",
     "scope": "/",
     "display": "standalone",
     "theme_color": "white",

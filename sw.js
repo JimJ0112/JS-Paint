@@ -53,14 +53,46 @@ async function fetchAssets(event){
 
   } catch (error) {
    const ass = await caches.open('JSPAINTCache');
+
    return ass.match(event.request);
     
   }
 
+  sendPushNotification("JS Paint","You're now in offline mode");
+
+  const swListener = new BroadcastChannel('swListener');
+  swListener.postMessage("You're now on offline mode");
+
 }
 
 
+// sends notification
+function sendPushNotification(title,notifbody){
+  var title = title;
+  var notifbody = notifbody;
 
+ // actions.push({ action: "close", title: "Close" });
+  
+
+     
+        
+
+                  self.registration.showNotification(title,{
+                      body: notifbody,
+                      data: "",
+                      icon: 'Images/512.png',
+                      tag: "Notify"
+                  });
+          
+              
+   
+
+      
+  
+}
+
+
+sendPushNotification("JS Paint","You're now in offline mode");
 
 
 

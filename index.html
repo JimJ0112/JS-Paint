@@ -19,6 +19,27 @@
         }else{
            console.log("service worker not in navigator");
         }
+
+        
+        Notification.requestPermission().then(
+        function(perm){
+            if(perm ==="granted"){
+                new Notification("JS Paint",{
+                    body: "Notifications Allowed",
+                    data: "",
+                    icon: 'Images/512.png',
+                    tag: "Notify"
+
+                });
+            }else{
+                alert("JS Paint" + " /n " + "Notifications Blocked");
+            }
+
+            }
+        );
+    
+
+
     </script>
 
     <div id = "PaintApp">

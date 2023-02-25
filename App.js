@@ -200,5 +200,40 @@ function DrawInTouch(e){
  
  
  }
+
  
+
+
+const swListener = new BroadcastChannel('swListener');
+swListener.onmessage = function(e) {
+  console.log('swListener Received', e.data);
+  sendPushNotification("JS Paint",e.data);
+  
+};
+ 
+
+
+function sendPushNotification(title,notifbody){
+    var title = title;
+    var notifbody = notifbody;
+  
+   // actions.push({ action: "close", title: "Close" });
+    
+  
+       
+          
+  
+                    new Notification(title,{
+                        body: notifbody,
+                        data: "",
+                        icon: 'Images/512.png',
+                        tag: "Notify"
+                    });
+            
+                
+     
+  
+        
+    
+  }
 

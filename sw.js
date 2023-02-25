@@ -1,5 +1,8 @@
 self.addEventListener("fetch", function(event) {
-    console.log(`start server worker`);
+    console.log(`fetch event listener active`);
+
+    event.respondWith(fetchAssets(event));
+
   
 }); 
 
@@ -8,11 +11,11 @@ self.addEventListener("install", function(event) {
     console.log(`service worker has been installed`);
   
   
-    evt.waitUntil(    
+    event.waitUntil(    
       caches.open('JSPAINTCache').then(cache => {
       console.log("caching assets");
-      //cache.addAll(['/','index.html','Images/512.png','Design.css'])
-        cache.addAll(['/']);
+      cache.addAll(['/','index.html','Images/512.png','Design.css'])
+        //cache.addAll(['/']);
       })
     );
 
@@ -38,7 +41,23 @@ self.addEventListener('message', function(event) {
   
 self.addEventListener("activate",function(){
     console.log("activated");
+    
 });
+
+
+// uses cache for offline mode
+async function fetchAssets(event){
+  try {
+    const response  = fetch(event.request);
+    return response;
+
+  } catch (error) {
+   const ass = await caches.open('JSPAINTCache');
+   return ass.match(event.request);
+    
+  }
+
+}
 
 
 

@@ -50,12 +50,12 @@ async function fetchAssets(event){
   try {
     const response  = fetch(event.request);
 
-    sendPushNotification("JS Paint","You're now in offline mode");
+    //sendPushNotification("JS Paint","You're now in offline mode");
 
-    /*
+    
     const swListener = new BroadcastChannel('swListener');
     swListener.postMessage("You're now on offline mode");
-    */
+    
 
     return response;
 

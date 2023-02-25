@@ -3,11 +3,11 @@
     "lang": "en-us",
     "short_name": "JS Paint",
     "description": "A sample PWA for testing purposes",
-    "start_url": "/https://jimj0112.github.io/JS-Paint/",
+    "start_url": "/https://jimj0112.github.io/JS-Paint/index.html",
     "scope": "/",
     "display": "standalone",
     "theme_color": "white",
-    "background_color": "#070529",
+    "background_color": "white",
     "orientation": "portrait",
     "icons": [
         {

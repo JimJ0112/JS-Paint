@@ -66,7 +66,7 @@ window.addEventListener("resize",function(){
 
     window.addEventListener("keydown",function(){
        
-        if(event.code === "KeyA"){
+        if(event.code === "KeyZ"){
             console.log(event.code);
             ctx_PaintCanvas.clearRect(0,0,PaintCanvas.width,PaintCanvas.height);
             var img = new Image;
@@ -79,7 +79,7 @@ window.addEventListener("resize",function(){
             }
         }
 
-        if(this.event.code === "KeyS"){
+        if(this.event.code === "KeyR"){
             
             img.src = RedoData.pop();
             img.onload = function(){

@@ -237,3 +237,49 @@ function sendPushNotification(title,notifbody){
     
   }
 
+
+
+// detect if in offline mode
+
+window.addEventListener('offline', function(){
+    if (navigator.onLine) {
+        isReachable(getServerUrl()).then(function(online) {
+          if (online) {
+            console.log('online');
+           sendPushNotification("JS Paint","You are now in online mode")
+
+          } else {
+           // console.log('no connectivity');
+           sendPushNotification("JS Paint","You are now in offline mode")
+          }
+        });
+      } else {
+        // handle offline status
+        console.log('offline');
+        sendPushNotification("JS Paint","You are now in offline mode")
+
+      }
+});
+
+
+function isReachable(url) {
+    /**
+     * Note: fetch() still "succeeds" for 404s on subdirectories,
+     * which is ok when only testing for domain reachability.
+     *
+     * Example:
+     *   https://google.com/noexist does not throw
+     *   https://noexist.com/noexist does throw
+     */
+    return fetch(url, { method: 'HEAD', mode: 'no-cors' })
+      .then(function(resp) {
+        return resp && (resp.ok || resp.type === 'opaque');
+      })
+      .catch(function(err) {
+        console.warn('[conn test failure]:', err);
+      });
+  }
+  
+  function getServerUrl() {
+    return document.getElementById('serverUrl').value || window.location.origin;
+  }
